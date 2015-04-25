@@ -1,0 +1,15 @@
+web:
+  build: ./web
+  command: /usr/sbin/apache2ctl -D FOREGROUND
+  volumes:
+   - /root/owncloud8/web/data:/var/www/owncloud/data
+   - /root/owncloud8/web/config:/var/www/owncloud/config
+  links:
+   - db
+  ports:
+   - "80:80"
+   - "443:443"
+db:
+  image: postgres
+  volumes:
+   - /root/owncloud8/db/data:/var/lib/postgresql/data
