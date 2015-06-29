@@ -13,7 +13,7 @@ wget \
 bzip2
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /var/www/html/
+WORKDIR /var/www/
 RUN wget https://download.owncloud.org/community/owncloud-8.0.2.tar.bz2
 RUN tar -xjf owncloud-8.0.2.tar.bz2
 RUN chown -R www-data:www-data /var/www && rm owncloud-8.0.2.tar.bz2
